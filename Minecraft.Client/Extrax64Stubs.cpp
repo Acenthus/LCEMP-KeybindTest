@@ -547,6 +547,7 @@ void				C_4JProfile::Initialise( DWORD dwTitleID,
 		GAME_SETTINGS *pGameSettings = (GAME_SETTINGS *)profileData[i];
 		pGameSettings->ucMenuSensitivity=100; //eGameSetting_Sensitivity_InMenu
 		pGameSettings->ucInterfaceOpacity=80; //eGameSetting_Sensitivity_InMenu
+		pGameSettings->ucGamma=100; //eGameSetting_Gamma
 		pGameSettings->usBitmaskValues|=0x0200; //eGameSetting_DisplaySplitscreenGamertags - on
 		pGameSettings->usBitmaskValues|=0x0400; //eGameSetting_Hints - on
 		pGameSettings->usBitmaskValues|=0x1000; //eGameSetting_Autosave - 2

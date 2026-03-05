@@ -111,6 +111,10 @@ Minecraft.Client/redist64/
 # 4J Studios proprietary libraries
 **/4JLibs/
 
+!Minecraft.Client/Windows64/4JLibs/
+!Minecraft.Client/Windows64/4JLibs/inc/
+!Minecraft.Client/Windows64/4JLibs/inc/4J_Storage.h
+
 # Miles Sound System (RAD Game Tools)
 **/Miles/
 
