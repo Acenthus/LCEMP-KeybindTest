@@ -5,29 +5,33 @@
 class KeyboardMouseInput
 {
 public:
+	// ARE YOU SURE THIS WILL WORK DOCTOR?
 	static const int MAX_KEYS = 256;
-
-	static const int MOUSE_LEFT = 0;
-	static const int MOUSE_RIGHT = 1;
-	static const int MOUSE_MIDDLE = 2;
 	static const int MAX_MOUSE_BUTTONS = 3;
 
-	static const int KEY_FORWARD = 'W';
-	static const int KEY_BACKWARD = 'S';
-	static const int KEY_LEFT = 'A';
-	static const int KEY_RIGHT = 'D';
-	static const int KEY_JUMP = VK_SPACE;
-	static const int KEY_SNEAK = VK_LSHIFT;
-	static const int KEY_SPRINT = VK_LCONTROL;
-	static const int KEY_INVENTORY = 'E';
-	static const int KEY_DROP = 'Q';
-	static const int KEY_CRAFTING = VK_TAB;
-	static const int KEY_CRAFTING_ALT = 'R';
-	static const int KEY_CONFIRM = VK_RETURN;
-	static const int KEY_CANCEL = VK_BACK;
-	static const int KEY_PAUSE = VK_ESCAPE;
-	static const int KEY_THIRD_PERSON = VK_F5;
-	static const int KEY_DEBUG_INFO = VK_F3;
+	static int MOUSE_LEFT;
+	static int MOUSE_RIGHT;
+	static int MOUSE_MIDDLE;
+
+	static int KEY_FORWARD;
+	static int KEY_BACKWARD;
+	static int KEY_LEFT;
+	static int KEY_RIGHT;
+	static int KEY_JUMP;
+	static int KEY_SNEAK;
+	static int KEY_SPRINT;
+	static int KEY_INVENTORY;
+	static int KEY_DROP;
+	static int KEY_CRAFTING;
+	static int KEY_CRAFTING_ALT;
+	static int KEY_CONFIRM;
+	static int KEY_CANCEL;
+	static int KEY_PAUSE;
+	static int KEY_THIRD_PERSON;
+	static int KEY_DEBUG_INFO;
+
+	static std::map<std::string, int*> keyBindings;
+    static void LoadConfig(const std::string& filepath);
 
 	void Init();
 	void Tick();
