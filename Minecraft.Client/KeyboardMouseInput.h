@@ -30,8 +30,9 @@ public:
 	static int KEY_THIRD_PERSON;
 	static int KEY_DEBUG_INFO;
 
-	static std::map<std::string, int*> keyBindings;
-    static void LoadConfig(const std::string& filepath);
+	void KeyboardMouseInput::LoadConfig() {
+    std::ifstream file("config.cfg"); 
+	}
 
 	void Init();
 	void Tick();
