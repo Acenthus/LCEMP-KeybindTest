@@ -9,6 +9,32 @@ extern HWND g_hWnd;
 // Forward declaration
 static void ClipCursorToWindow(HWND hWnd);
 
+// I HAVE NO IDEA!
+void KeyboardMouseInput::LoadConfig(const std::string& filepath) {
+    std::ifstream file(filepath);
+    std::string line;
+
+    while (std::getline(file, line)) {
+        auto commentPos = line.find('#');
+        if (commentPos != std::string::npos) line.erase(commentPos);
+
+        auto delimiterPos = line.find('=');
+        if (delimiterPos == std::string::npos) continue;
+
+        std::string key = line.substr(0, delimiterPos);
+        std::string value = line.substr(delimiterPos + 1);
+
+        // Trim whitespace
+        key.erase(key.find_last_not_of(" \t") + 1);
+        value.erase(value.find_last_not_of(" \t") + 1);
+
+        // If this key exists in bindings, assign it
+        if (keyBindings.find(key) != keyBindings.end() && !value.empty()) {
+            *(keyBindings[key]) = std::toupper(value[0]);
+        }
+    }
+}
+
 // coded by notpies fr
 void KeyboardMouseInput::Init()
 {
