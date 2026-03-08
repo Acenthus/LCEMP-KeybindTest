@@ -10,8 +10,8 @@ extern HWND g_hWnd;
 static void ClipCursorToWindow(HWND hWnd);
 
 // I HAVE NO IDEA!
-void KeyboardMouseInput::LoadConfig(const std::string& filepath) {
-    std::ifstream file(filepath);
+void KeyboardMouseInput::LoadConfig() {
+    std::ifstream file("config.cfg");
     std::string line;
 
     while (std::getline(file, line)) {
